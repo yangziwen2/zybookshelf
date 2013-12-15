@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/book")
 public class BookController {
 	
-	private static final String IT_EBOOKS_HOST_URL = "http://it-ebooks.info/";
+	private static final String IT_EBOOKS_HOST_URL = "http://it-ebooks.info";
 
 	@Autowired
 	private IBookService bookService;

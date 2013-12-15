@@ -55,7 +55,9 @@ function initPageBar(){
 	});
 }
 
-function downloadBook(pageUrl) {
+function downloadBook(pageUrl, _this) {
+	var $this = $(_this);
+	console.dir($this[0]);
 	if(!pageUrl) {
 		alert('参数有误!');
 		return;
@@ -66,7 +68,8 @@ function downloadBook(pageUrl) {
 			return;
 		}
 		//window.open(downloadUrl, 'bookDownloadFrame');
-		$('#J_bookDownloadFramework').attr('src', downloadUrl);
+		//$('#J_bookDownloadFramework').attr('src', downloadUrl);
+		$this.after('<span style="display:inline-block; width:20px;"></span><a href="'+downloadUrl+'">下&nbsp;&nbsp;载</a>');
 	});
 }
 
@@ -163,8 +166,8 @@ function downloadBook(pageUrl) {
 							<h4>页&nbsp;&nbsp;&nbsp;&nbsp;数:&nbsp;&nbsp;&nbsp;&nbsp;${book.pages }</h4>
 							<h4>大&nbsp;&nbsp;&nbsp;&nbsp;小:&nbsp;&nbsp;&nbsp;&nbsp;${book.size }</h4>
 							<h4>
-								<%-- <a href="${book.pageUrl}" target="_blank">下载页</a> --%>
-								<a href="javascript:downloadBook('${book.pageUrl}')">下&nbsp;&nbsp;&nbsp;&nbsp;载</a>
+								<a href="${book.pageUrl}" target="_blank">下载页</a>
+								<%-- <a href="javascript:void(0);" onclick="downloadBook('${book.pageUrl}', this)">获取链接</a> --%>
 							</h4>
 						</td>
 					</tr>
