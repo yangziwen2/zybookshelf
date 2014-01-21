@@ -62,6 +62,7 @@ public class BookDaoImpl implements IBookDao {
 		if(!StringUtils.isEmpty(year)) {
 			hqlBuff.append(" and year = :year ");
 		}
+		hqlBuff.append(" order by id desc ");
 		return hqlBuff.toString();
 	}
 

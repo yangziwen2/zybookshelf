@@ -57,7 +57,6 @@ function initPageBar(){
 
 function downloadBook(pageUrl, _this) {
 	var $this = $(_this);
-	console.dir($this[0]);
 	if(!pageUrl) {
 		alert('参数有误!');
 		return;
